@@ -1,3 +1,9 @@
-[class^=sidebar_] {
-    width: 300px !important; /* Adjust this value as needed */
+#app-mount [class^='base_'] > [class^='content_'] > [class^=sidebar_] {
+    width: var(--sidebar-width); /* We have to be really specific what class we want to override,
+                                since discord uses the important tag here. */
+}
+
+[class^='channel_'] {
+    max-width: var(--sidebar-width); /* We have to set the max width for the channel to the side of the sidebar,
+                                        otherwise the channels won't scale properly. */
 }
